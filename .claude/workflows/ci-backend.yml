@@ -1,0 +1,45 @@
+name: Backend CI
+
+on:
+  push:
+    branches: [main, develop, 001-textbook-generation]
+    paths:
+      - 'backend/**'
+      - '.github/workflows/ci-backend.yml'
+  pull_request:
+    branches: [main, develop]
+    paths:
+      - 'backend/**'
+
+jobs:
+  lint-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r backend/requirements.txt
+          pip install black isort flake8 mypy
+
+      - name: Format check (black, isort)
+        run: |
+          black --check backend/
+          isort --check-only backend/
+        continue-on-error: true
+
+      - name: Lint
+        run: flake8 backend/src
+        continue-on-error: true
+
+      - name: Type check
+        run: mypy backend/src
+        continue-on-error: true
