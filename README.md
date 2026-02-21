@@ -262,13 +262,7 @@ See [`specs/001-textbook-generation/contracts/`](specs/001-textbook-generation/c
 
 For issues, questions, or contributions, please refer to the specification and implementation plan in the `specs/` directory.
 
-## 📄 License
-
-[Specify your license here]
-
----
-
-**Built with ❤️ for learners of Physical AI & Humanoid Robotics**
 
 **Constitution v1.0.0** | **Spec v1.0.0** | **Plan v1.0.0** | **Tasks v1.0.0**
 # Book
+
