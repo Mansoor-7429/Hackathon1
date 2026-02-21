@@ -1,0 +1,47 @@
+# Git
+.git
+.gitignore
+.gitattributes
+
+# Documentation
+*.md
+README.md
+
+# Development
+.vscode/
+.idea/
+*.log
+.DS_Store
+Thumbs.db
+
+# Node
+node_modules/
+npm-debug.log*
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Tests
+tests/
+*.test.js
+pytest.ini
+
+# Env files
+.env
+.env.*
+
+# IDE
+.eslintrc*
+.prettier*
+tsconfig.json
+
+# Coverage
+coverage/
+
+# Build artifacts (keep what we need for runtime)
+# but exclude development build artifacts
+.next/
